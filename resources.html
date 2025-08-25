@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - UCDS</title>
+  <link rel="stylesheet" href="styles.css"> <!-- same CSS as main site -->
+</head>
+<body>
+    
+  <!-- ============== NAVBAR ============== -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="brand" aria-label="UCDS home">
+      <span class="dot"></span>
+      <span>UCDS Debate Society</span>
+    </a>
+    <div class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#activities">Activities</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#events">Events</a>
+      <a href="#resources">Resources</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#join">Join Us</a>
+    <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div class="container mobile-menu" id="mobileMenu" hidden>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#activities" onclick="toggleMenu()">Activities</a>
+    <a href="#achievements" onclick="toggleMenu()">Achievements</a>
+    <a href="#events" onclick="toggleMenu()">Events</a>
+    <a href="#resources" onclick="toggleMenu()">Resources</a>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1>📚 UCDS Resources</h1>
+      <p>Training slides, recordings, and motion archives for our members.</p>
+    </div>
+  </header>
+
+  <!-- Resources Section -->
+  <section class="section">
+    <div class="container grid-3">
+      <!-- Training Slides -->
+      <div class="card">
+        <h3>📑 Training Slides</h3>
+        <p>Download slides from this week meeting.</p>
+        <a class="btn btn-outline" href="files/slides-week1.pdf" target="_blank">View</a>
+      </div>
+
+      <!-- Recordings -->
+      <div class="card">
+        <h3>🎥 Recordings</h3>
+        <p>Watch past training sessions and lectures.</p>
+        <a class="btn btn-outline" href="https://drive.google.com/" target="_blank">Open</a>
+      </div>
+
+      <!-- Motion Archive -->
+      <div class="card">
+        <h3>📝 Motion Archive</h3>
+        <p>Browse motions from past scrims, leagues, and tournaments.</p>
+        <a class="btn btn-outline" href="files/motion-archive.pdf" target="_blank">Browse</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Button -->
+  <div class="container" style="text-align:center; margin:20px 0;">
+    <a class="btn btn-outline" href="index.html">⬅ Back to Home</a>
+  </div>
+    <!-- ============== FOOTER ============== -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <h3>UCDS Debate Society</h3>
+        <p>Community for people who are interested in debate to grow and learn.</p>
+        <a class="btn btn-primary" href="#join">Join Us</a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <p><a href="#about">About</a><br><a href="#activities">Activities</a><br><a href="#achievements">Achievements</a></p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <p><a href="#resources">Guides</a><br><a href="#">Formats</a><br><a href="#">Blog</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:ukm.ucds@ciputra.ac.id">ukm.ucds@ciputra.ac.id</a><br>Room 2136, University Ciputra</p>
+      </div>
+    </div>
+    <div class="footbar">
+      <div class="container">© <span id="y"></span> UCDS. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const m = document.getElementById('mobileMenu');
+      const hidden = m.hasAttribute('hidden');
+      if(hidden) m.removeAttribute('hidden'); else m.setAttribute('hidden','');
+    }
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
