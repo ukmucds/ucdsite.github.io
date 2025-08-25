@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UCDS Debate Society — Where Ideas Meet Persuasion</title>
+  <title>University Ciputra Debate Society — Where Ideas Meet Persuasion</title>
   <meta name="description" content="University Ciputra Debate Society (UCDS) — activities, achievements, events, resources, and how to join."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="styles.css?v=2">
@@ -17,7 +17,7 @@
   <div class="container nav-inner">
     <a href="#home" class="brand" aria-label="UCDS home">
       <span class="dot"></span>
-      <span>UCDS Debate Society</span>
+      <span>University Ciputra Debate Society</span>
     </a>
     <div class="nav-links" aria-label="Primary">
       <a href="#about">About</a>
@@ -46,10 +46,10 @@
   <header id="home" class="hero container">
     <div class="collage">
       <div class="left">
-        <img src="images/hero-left-1.jpg" alt="UCDS meeting photo placeholder" />
+        <img src="ucds-logo/UCDS-grafit.png" alt="UCDS meeting photo placeholder" />
         <div class="grid-pair">
-          <img src="images/hero-left-2.jpg" alt="Speaker photo placeholder" />
-          <img src="images/hero-left-3.jpg" alt="Member presenting placeholder" />
+          <!-- <img src="images/hero-left-2.jpg" alt="Speaker photo placeholder" />
+          <img src="images/hero-left-3.jpg" alt="Member presenting placeholder" /> -->
         </div>
       </div>
       <div>
@@ -202,14 +202,39 @@
     <h2>Competitions & Achievements</h2>
     <p>From local scrimmages to international circuits, our members consistently shine as both debaters and adjudicators.</p>
 
-    <!-- Gallery -->
-    <div style="margin-top:24px">
-      <div class="gallery" style="margin-top:12px">
-        <img src="images/ach-1.jpg" alt="Tournament photo" />
-        <img src="images/ach-2.jpg" alt="Finals photo" />
-        <img src="images/ach-3.jpg" alt="Award photo" />
-      </div>
-    </div>
+<!-- Gallery -->
+<div style="margin-top:24px">
+  <div class="gallery" style="margin-top:12px; display:flex; gap:12px;">
+    <img src="image-2/proarms-quarterfinalist.png" alt="Tournament photo" class="clickable-img" />
+    <img src="image-2/proarms-finalist.png" alt="Finals photo" class="clickable-img" />
+  </div>
+</div>
+
+<!-- Lightbox modal -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+  <img id="lightbox-img" src="" style="max-width:60%; max-height:60%; border-radius:10px;">
+</div>
+
+
+<script>
+  const imgs = document.querySelectorAll('.clickable-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  imgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
+
+
 
     <!-- Achievements side by side -->
     <div style="display:flex; gap:40px; margin-top:32px; flex-wrap:wrap;">
@@ -315,23 +340,23 @@
         <div class="resource">
           <h3>Beginner's Guide</h3>
           <p>A concise primer on speeches, structure, and flowing.</p>
-          <a href="#">Download PDF</a>
+          <a href="https://www.debatingsa.com.au/wp-content/uploads/2014/03/Debating-A-Brief-Introduction-for-Beginners.pdf">Download PDF</a>
         </div>
         <div class="resource">
           <h3>Recorded Debates</h3>
           <p>Model rounds and sample speeches from members.</p>
-          <a href="#">Watch Playlist</a>
+          <a href="https://www.youtube.com/live/GRUqv8z5QV4?si=rLsDcs3rIHcHFBke">Watch Video</a>
         </div>
         <div class="resource">
           <h3>Debate Formats</h3>
           <p>Rules for BP, WSDC, and more.</p>
           <a href="http://www.esu.org/wp-content/uploads/2019/01/Introduction-to-World-Schools-format-guide.pdf">Read Rules</a>
         </div>
-        <div class="resource">
+        <!-- <div class="resource">
           <h3>Reading List</h3>
           <p>Recommended books & articles on rhetoric and argumentation.</p>
           <a href="#">See List</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -343,51 +368,52 @@
         <h3>Member Spotlight</h3>
         <p><strong>Aisyah Aurelia</strong> — Novice N1; loves feminist motions and POIs.</p>
       </div>
-      <div class="card">
-        <h3>Latest Blog</h3>
-        <p>Five common BP whip mistakes and how to avoid them.</p>
-        <a class="btn btn-outline" href="#">Read</a>
-      </div>
+    <div class="card">
+      <h3>📚 Resources</h3>
+      <p>Training slides, recordings, and motion archives for our members.</p>
+      <a class="btn btn-outline" href="resources.html">Explore</a>
+    </div>
       <div class="card">
         <h3>Photo Gallery</h3>
         <p>Highlights from scrims, leagues, and tournaments.</p>
-        <a class="btn btn-outline" href="#">Open Gallery</a>
+        <a class="btn btn-outline" href="gallery.html">Open Gallery</a>
       </div>
     </div>
   </section>
 
   <!-- ============== JOIN US ============== -->
-  <section id="join" class="section">
-    <div class="container join-grid">
-      <div>
-        <div class="eyebrow">Join Us</div>
-        <h2>Membership & Registration</h2>
-        <p>Benefits: coaching & feedback, competition support, leadership opportunities, and a community that pushes you to grow.</p>
-        <form class="form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll email you soon.'); this.reset();">
-          <input class="input" placeholder="Full Name" required>
-          <input class="input" type="email" placeholder="Email" required>
-          <input class="input" placeholder="Study Program / Year" required>
-          <textarea class="input" rows="4" placeholder="Why do you want to join?" required></textarea>
-          <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
-      </div>
-      <div class="faq">
-        <h3>FAQs for Newcomers</h3>
-        <details open>
-          <summary>Do I need experience?</summary>
-          <p>No. We welcome complete beginners and provide tiered leagues to help you progress.</p>
-        </details>
-        <details>
-          <summary>Is there a membership fee?</summary>
-          <p>We keep fees minimal and offer sponsorships when competing externally.</p>
-        </details>
-        <details>
-          <summary>How often do we meet?</summary>
-          <p>Weekly meetings on Wednesday, plus optional weekend scrims.</p>
-        </details>
-      </div>
+<section id="join" class="section">
+  <div class="container join-grid">
+    <div>
+      <div class="eyebrow">Join Us</div>
+      <h2>Membership & Registration</h2>
+      <p>Benefits: coaching & feedback, competition support, leadership opportunities, and a community that pushes you to grow.</p>
+
+      <!-- Replace form with button -->
+      <a href="https://student.uc.ac.id/ukm/form" target="_blank" class="btn btn-primary">
+        Register via CEDX
+      
+      </a>
     </div>
-  </section>
+
+    <div class="faq">
+      <h3>FAQs for Newcomers</h3>
+      <details open>
+        <summary>Do I need experience?</summary>
+        <p>No. We welcome complete beginners and provide tiered leagues to help you progress.</p>
+      </details>
+      <details>
+        <summary>Is there a membership fee?</summary>
+        <p>We keep fees minimal and offer sponsorships when competing externally.</p>
+      </details>
+      <details>
+        <summary>How often do we meet?</summary>
+        <p>Weekly meetings on Wednesday, plus optional weekend scrims.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 
   <!-- ============== CONTACT ============== -->
   <section id="contact" class="section" style="background:var(--white)">
@@ -432,7 +458,7 @@
   <footer>
     <div class="container footer-inner">
       <div>
-        <h3>UCDS Debate Society</h3>
+        <h3>UC Debate Society</h3>
         <p>Community for people who are interested in debate to grow and learn.</p>
         <a class="btn btn-primary" href="#join">Join Us</a>
       </div>
